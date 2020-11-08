@@ -1,0 +1,32 @@
+<div class="col-sm-4"></div>
+  <div class="col-sm-4">
+    <br />
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12">
+            <p class="text-center" style="font-weight: 500;">
+              Sign In
+            </p>
+             <form>
+              <div class="form-group login">
+                <div class="input-container" style="display: flex;width: 100%;background-color: #edf2f6;border-radius: 30px;color: #b6b6b6; margin-bottom: 14px;">
+                  <i class="fa fa-user icon" style="padding: 13px 7px 8px 15px;"></i>
+                  <input type="email" ng-model="lg.email" style="padding: 10px 5px;border-radius: 2em; background-color: #edf2f6; color: #554f4f;border: 1px solid whitesmoke;outline: none;font-size: 14px; width: 100%;" placeholder="Email" required>
+                </div>
+                <div class="input-container" style="display: flex;width: 100%;background-color: #edf2f6;border-radius: 30px;color: #b6b6b6;">
+                  <i class="fa fa-lock icon" style="padding: 13px 7px 8px 15px;"></i>
+                  <input type="password" ng-model="lg.password" style="padding: 10px 5px;border-radius: 2em; background-color: #edf2f6; color: #554f4f; border: 1px solid whitesmoke;outline: none;font-size: 14px;width: 100%;" placeholder="Password" required>
+                </div>
+              </div>
+              <button class="btn btn-info col-md-12 verdana" ng-click="lg.login()" ng-disabled="lg.loginBtn" style="color: white;border-radius: 20px; font-size: 13px;padding: 9px;">
+                {{ lg.buttonMessage }}
+              </button> 
+            </form>
+          </div>
+        </div>
+      </div>
+      <br />
+    </div>
+    <br />
+</div>
+<div class="col-sm-4"></div>

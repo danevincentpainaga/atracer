@@ -1,0 +1,67 @@
+<div class="post-container">
+	<div class="bounce wrapper">
+		<div class="pop-up-body" >
+	    	<div class="pop-up-body-header">
+	    		<span>Create Post</span>
+	    		<div>
+	    			<i class="fa fa-times close-post-modal"></i>
+	    		</div>
+	    	</div>
+	    	<hr style="margin-top: .5pc; margin-bottom: .5pc;">
+	    	<div class="create-post-header">
+		    	<div class="create-post-image">
+		          <img src="uploads/dane.jpg">
+		        </div>
+		    	<div class="create-post-body">
+		    		<div class="tagged-users">
+		    			<span ng-if="p.tagged">You tagged -</span>
+		    			<a href="" ng-repeat="tag in p.tagged_users | limitTo: p.show_tagged_limit" ng-click="p.tagFriends()">{{ tag.fullname }},</a>
+		    			<span ng-if="p.hasOthers">
+		    				<span>and</span>
+		    				<a href="" ng-click="p.tagFriends()">
+		    					<span>{{ p.others }}</span>
+		    					<span>others</span>
+		    				</a>
+		    			</span>
+		    		</div>
+		    		<div style="padding: 0px 0px 1px 10px;font-size: 14px; color: #757a95;" ng-if="p.feeling_status">Feeling - <span ng-bind-html="p.selected_feeling | formatDescription"></span></div>
+		    		<div class="upload-holder">
+		    			<textarea placeholder="Whats on your mind? Dane" ng-model="p.post_description" emoji description="p.post_description"></textarea>
+		    		</div>
+		    	</div>
+	    	</div>
+	    	<div class="uploaded-images-wrapper" style="max-height: unset !important;">
+	    		<div class="post-grid">
+	    			<div pop-up-post-wrapper postfiles="p.uploadedImage" ></div>
+	    		</div>
+	    	</div>
+			<div class="post-icons">
+		        <a href="" ngf-select="p.getTheFiles($files)" multiple="multiple" >
+		          <img src="images/image.svg">
+		        </a>
+		        <a href="" ng-click="p.tagFriends()">
+		          <img src="images/tag.svg">
+		        </a>
+		        <a href="" ng-click="p.feelingActivity()">
+		          <img src="images/feeling.svg">
+		        </a>
+			</div>
+			<hr style="margin-top: .5pc; margin-bottom: .5pc;">
+			<div class="post-button" >
+				<button>
+					<i class="fa fa-globe-asia"></i>
+					<span>Public</span>
+				</button>
+				<button ng-click="p.uploadPost()">{{ p.post_status }}</button>
+			</div>
+		</div>
+		<div class="posting-message" ng-if="p.postingInProgress">
+    		<div class="lds-ring">
+    			<span style="font-weight: 300;">Posting</span>
+    			<div></div><div></div><div></div><div></div>
+    		</div>
+		</div>		
+		<tag-friends-suggestions status="p.show_suggestions" ></tag-friends-suggestions>
+		<feeling-activity status="p.show_feeling_activity"></feeling-activity>
+	</div>
+</div>

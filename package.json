@@ -1,0 +1,51 @@
+{
+  "name": "atracer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rimraf dist && webpack --bail --progress --profile",
+    "server": "webpack-dev-server --history-api-fallback --inline --progress --open 'chrome' --watch",
+    "start": "npm run server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@uirouter/angularjs": "^1.0.28",
+    "angular": "^1.8.0",
+    "angular-route": "^1.4.0",
+    "angular-cookies": "^1.4.0",
+    "angular-resource": "^1.4.0",
+    "angular-sanitize": "^1.8.0",
+    "angular-touch": "^1.4.0",
+    "bootstrap": "^4.0.0",
+    "jquery": "^3.2",
+    "popper.js": "^1.16.1",
+    "video.js": "^7.8.4",
+    "ng-file-upload": "^12.2.13",
+    "moment": "^2.27.0",
+    "placeholder-loading": "^0.2.6",
+    "@fortawesome/fontawesome-free": "^5.13.0",
+    "emoji-datasource-facebook": "^5.0.1",
+    "emoji-js": "^3.5.0",
+    "emojionearea": "^3.0.0",
+    "sweetalert2": "^9.10.7"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^5.0.0",
+    "html-webpack-plugin": "^4.3.0",
+    "mini-css-extract-plugin": "^1.2.1",
+    "rimraf": "^3.0.2",
+    "sass": "^1.28.0",
+    "sass-loader": "^10.0.4",
+    "style-loader": "^2.0.0",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
+}

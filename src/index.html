@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="pnhsApp">
+<head>
+	<title></title>
+  <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+</head>
+<body ng-cloak ng-controller="mainCtrl">
+    <ng-include src="'src/views/header.html'" ng-if="loggedIn"></ng-include> 
+    <div class="container" style="padding-left: 30px;padding-right:30px;margin-top: 60px;">
+      <br />
+        <div class="row" ui-view="" ></div>
+      <br />
+      <br />
+    </div>
+    <modal-directive class="pop-up-post"  id="pop-up-post-modal" ></modal-directive>
+    <div style="width: 20%;background: #fff; position: fixed;right: 3px;height: 87.8%; border: 1px solid #dcdcdc;z-index: 90;display: none;">
+        <span>Chat</span>
+    </div>
+    <div style="width: 207px; background: red;position: fixed;right: 25px;bottom: 0px;height: 40px;background-color: #555;color: #fff; border-radius: 5px 5px 0 0;text-align: center;padding: 9px;cursor: pointer;box-shadow: rgba(0, 0, 0, 0.22) 0px 0px 4px, rgba(0, 0, 0, 0.31) 0px 4px 8px;" ng-if="loggedIn">
+        <span><i class="fa fa-envelope"></i> Message</span>
+    </div>
+</body>
+
+</html>
