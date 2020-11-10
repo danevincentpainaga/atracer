@@ -15,10 +15,10 @@
 		    	<div class="create-post-body">
 		    		<div class="tagged-users">
 		    			<span ng-if="p.tagged">You tagged -</span>
-		    			<a href="" ng-repeat="tag in p.tagged_users | limitTo: p.show_tagged_limit" ng-click="p.tagFriends()">{{ tag.fullname }},</a>
+		    			<a href="" ng-repeat="tag in p.tagged_users | limitTo: p.show_tagged_limit" ng-click="p.tagConnections()">{{ tag.fullname }},</a>
 		    			<span ng-if="p.hasOthers">
 		    				<span>and</span>
-		    				<a href="" ng-click="p.tagFriends()">
+		    				<a href="" ng-click="p.tagConnections()">
 		    					<span>{{ p.others }}</span>
 		    					<span>others</span>
 		    				</a>
@@ -32,14 +32,14 @@
 	    	</div>
 	    	<div class="uploaded-images-wrapper" style="max-height: unset !important;">
 	    		<div class="post-grid">
-	    			<div pop-up-post-wrapper postfiles="p.uploadedImage" ></div>
+	    			<div post-grid-wrapper postfiles="p.uploadedImage" ></div>
 	    		</div>
 	    	</div>
 			<div class="post-icons">
 		        <a href="" ngf-select="p.getTheFiles($files)" multiple="multiple" >
 		          <img src="images/image.svg">
 		        </a>
-		        <a href="" ng-click="p.tagFriends()">
+		        <a href="" ng-click="p.tagConnections()">
 		          <img src="images/tag.svg">
 		        </a>
 		        <a href="" ng-click="p.feelingActivity()">
@@ -61,7 +61,7 @@
     			<div></div><div></div><div></div><div></div>
     		</div>
 		</div>		
-		<tag-friends-suggestions status="p.show_suggestions" ></tag-friends-suggestions>
+		<tag-connections-suggestions status="p.show_suggestions" ></tag-connections-suggestions>
 		<feeling-activity status="p.show_feeling_activity"></feeling-activity>
 	</div>
 </div>

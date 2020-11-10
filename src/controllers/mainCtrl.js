@@ -26,13 +26,13 @@ app.controller('mainCtrl',['$scope', '$rootScope', '$location', '$state', '$http
 }]);
 
 
-app.directive('menuDirective', function(){
+app.directive('leftPanelDirective', function(){
   return{
     restrict: 'E',
     scope:{
 
     },
-    templateUrl: 'src/views/menu.html',
+    templateUrl: 'src/views/left_panel_directive.html',
   }
 });
 
@@ -62,57 +62,22 @@ app.directive('postedFeedDirective', function(){
 });
 
 
-app.directive('rightColumnDirective', function(){
+app.directive('rightPanelDirective', function(){
   return{
     restrict: 'E',
     scope:{
 
     },
-    templateUrl: 'src/views/officers_friends_directive.html',
+    templateUrl: 'src/views/right_panel_directive.html',
   }
 });
 
 
-app.directive('files', function(){
-    function link(scope, element, attrs){
-        scope.$watch('filedata', function(n, o){
-          if (n) {
-            displayFiles(JSON.parse(n));
-          }
-        });
-    }
-
-    function displayFiles(file){
-      file.forEach(function(val, i){
-        if (val.type.slice(0, val.type.indexOf('/')) =='video') {
-          var photo = $('<video />', {
-              id: i,
-              src: val.result,
-              alt: '',
-              controls: true,
-              width: 100+'%'
-          });
-        }
-        else{
-          var photo = $('<img />', {
-              id: i,
-              src: val.result,
-              alt: '',
-              width: 100+'%'
-          });
-        }
-        photo.appendTo($('#file-holder'));
-      });
-    }
-
-    return{
-      restrict:'A',
-      scope: { 
-        filedata: '@filedata',
-        files: '='
-      },
-      link: link
-    }
+app.directive('sidenavMenuDirective', function(){
+  return{
+    restrict: 'E',
+    templateUrl: 'src/views/sidenav_menu_directive.html',
+  }
 });
 
 app.factory("fileReader", function($q, $log) {

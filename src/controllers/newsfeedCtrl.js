@@ -32,16 +32,16 @@ app.controller('newsfeedCtrl',['$scope', '$rootScope', '$location', '$state', '$
 		nf.uploadedfile = file;
     });
 
-    // function getPost(){
-    //     apiService.getPost().then(function(response){
-    //       nf.post = response.data
-    //       console.log(nf.post);
-    //     }, function(err){
-    //       console.log(err);
-    //     });
-    // }
+    function getPost(){
+        apiService.getPost().then(function(response){
+          nf.post = response.data
+          console.log(nf.post);
+        }, function(err){
+          console.log(err);
+        });
+    }
 
-    // getPost();
+    getPost();
 
 }]);
 

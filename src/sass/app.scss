@@ -366,10 +366,12 @@ body{
                 width: auto;
                 color: #515365;
             }
-            span a{
+            span{
                 display: inline-block;
                 font-size: 12px;
                 width: 100%;
+                font-weight: 500;
+                color: #515365;
             }
         }
     }
@@ -816,7 +818,7 @@ body{
     border-radius: 7px;
     border: 1px solid #e4e4e4;
     box-shadow: $header-box-shadow;
-        .search-friends{
+        .search-connections{
             display: flex;
             align-items: center;
             margin-bottom: 7px;
@@ -862,7 +864,7 @@ body{
                 }
             }
 
-            .friends{
+            .connections{
                 display: inline-block;
                 padding-left: 3px;
                 vertical-align: middle;

@@ -7,8 +7,8 @@
 			<span>Tag Connections</span>
 		</h6>
 		<hr style="margin-top: .7pc; margin-bottom: .5pc;">
-		<div class="search-friends">
-	     	<input type="text" class="form-control form-control search-friends-btn " placeholder="Search for friends" ng-model="tc.search">
+		<div class="search-connections">
+	     	<input type="text" class="form-control form-control search-connections-btn " placeholder="Search for connections" ng-model="tc.search">
 			<a href="" ng-click="tc.doneTagging()">Done</a>
 		</div>
 		<div class="tagged-holder" ng-show="tc.hasTagged">
@@ -31,7 +31,7 @@
 			      <figure ng-click="tc.tagged(sug)">
 			        <a href=""><img ng-src="{{ sug.photo | checkPhoto }}" alt=""></a>
 			      </figure>
-			      <div class="friends">
+			      <div class="connections">
 			        <span><a href="" ng-click="tc.tagged(sug)">{{ sug.firstname }}&nbsp;{{ sug.lastname }}</a></span>
 			      </div>
 			    </li>

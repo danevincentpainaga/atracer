@@ -1,9 +1,10 @@
 angular.module('pnhsApp').directive('postGridWrapper', function(){
-
+  
   function link(scope, elem, attrs){
 
     scope.$watch('postfiles', function(files, o){
       if (files) {
+        scope.baseUrl = files[0].hasOwnProperty('name') === true ? "" : "http://localhost:8000/storage/";
         scope.preLoadFiles(files);
       }
     });
@@ -37,7 +38,7 @@ angular.module('pnhsApp').directive('postGridWrapper', function(){
         }
 
         if (files[i].mime_type != "video/mp4") {
-          img.src = 'storage/'+files[i].image_name;
+          img.src = scope.baseUrl+files[i].image_name;
         }
         else{
           count++;
@@ -82,10 +83,10 @@ angular.module('pnhsApp').directive('postGridWrapper', function(){
   return{
     restrict:'A',
     template:'<div ng-class="ngClass"><div ng-repeat="f in pf track by $index">'+
-                '<img ng-src="storage/{{ f.image_name }}" ng-if="f.mime_type | checkImage">'+
+                '<img ng-src="{{ baseUrl }}{{ f.image_name }}" ng-if="f.mime_type | checkImage">'+
                 '<div class="video-wrap" ng-if="f.mime_type | checkVideo" >'+
                   '<video>'+
-                    '<source ng-src="storage/{{ f.image_name }}" type="video/mp4"/>'+
+                    '<source ng-src="{{ baseUrl }}{{ f.image_name }}" type="video/mp4"/>'+
                   '</video>'+
                  ' <figure>'+
                     '<button name="play"></button>'+

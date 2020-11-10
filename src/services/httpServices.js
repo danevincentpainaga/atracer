@@ -1,7 +1,7 @@
 var app = angular.module('pnhsApp');
 app.factory('apiService', ['$http', '$cookies', '$rootScope', '$q', function($http, $cookies, $rootScope, $q){
 	 
-  var baseUrl = "http://localhost:8000/"
+  var baseUrl = "http://localhost:8000/";
 
   return{
     validateLogin: function(credData){
@@ -69,7 +69,7 @@ app.factory('apiService', ['$http', '$cookies', '$rootScope', '$q', function($ht
     getSearchFriends: function(keyword){
       return $http({
         method:'POST',
-        url: baseUrl+'api/getSearchFriends',
+        url: baseUrl+'api/getSearchConnections',
         data: keyword,
         headers: {
           "Content-Type": "application/json",

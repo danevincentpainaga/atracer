@@ -16,6 +16,5 @@ import 'angular-resource/angular-resource.min.js';
 import 'ng-file-upload/dist/ng-file-upload-shim.min.js';
 import 'ng-file-upload/dist/ng-file-upload-all.js';
 import 'video.js/dist/video.js';
-import 'moment/min/locales';
 import 'emojionearea/dist/emojionearea.min.js';
 import 'sweetalert2/dist/sweetalert2.min.js';

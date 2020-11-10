@@ -16,7 +16,7 @@ app.controller('postsCtrl',['$scope', '$rootScope', '$location', '$state', '$htt
     var files_to_upload = [];
     var post_images = [];
     p.post_status = 'Share';
-    p.privacy = ['public', 'friends'];
+    p.privacy = ['public', 'connections'];
     p.privacy_status = 'public';
     p.show_tagged_limit = 1;
     p.filesize = 2000000;
@@ -47,7 +47,7 @@ app.controller('postsCtrl',['$scope', '$rootScope', '$location', '$state', '$htt
       }
     }, true);
 
-    p.tagFriends = function(){
+    p.tagConnections = function(){
       p.show_suggestions = true;
     }
 
@@ -90,7 +90,7 @@ app.controller('postsCtrl',['$scope', '$rootScope', '$location', '$state', '$htt
       angular.forEach(file, function(val, i){
         fileReader.readAsDataUrl(val, $scope)
           .then(function(result){
-             images.push({name:val.name, type: val.type, result: result});
+             images.push({name:val.name, mime_type: val.type, image_name: result});
              images.length == file.length ? p.uploadedImage = images : [];
           }, function(err){
             console.log(err);
@@ -113,9 +113,9 @@ app.controller('postsCtrl',['$scope', '$rootScope', '$location', '$state', '$htt
       let final_file_name = modifiedFileName+'_pnhsKey.'+extension;
 
       let upload = Upload.upload({
-        url: 'api/uploadFiles',
+        url: 'http://localhost:8000/api/uploadFiles',
         data: { file: Upload.rename(file, final_file_name) },
-        resumeSizeUrl: baseUrl+'api/checkChunk/'+modifiedFileName,
+        resumeSizeUrl: 'http://localhost:8000/api/checkChunk/'+modifiedFileName,
         headers: {
           Authorization : 'Bearer '+ $rootScope.token
         },
@@ -124,7 +124,6 @@ app.controller('postsCtrl',['$scope', '$rootScope', '$location', '$state', '$htt
 
       return upload;
     }
-
 
     function uploadFilesToServer(upload, methodName, objToPass){
 

@@ -1,91 +1,31 @@
-<!-- <div class="container"> -->
-  <!-- <div class="row post-section"> -->
-  <div class="post-section">
-    <div class="post-new">
-      <div class="post-new-body">
-        <div class="post-new-image">
-          <img src="uploads/dane.jpg">
-        </div>
-        <div class="post-new-content">
-          <input type="text" class="form-control form-control post-new-input" placeholder="Whats on your mind?" open-modal>
-        </div>
+<div class="post-section">
+  <div class="post-new">
+    <div class="post-new-body">
+      <div class="post-new-image">
+        <img src="uploads/dane.jpg">
       </div>
-      <hr style="margin-top: .7pc; margin-bottom: .5pc;">
-      <div class="button-type">
-        <a href="">
-          <img src="images/image.svg" style="width: 28px;">
-          Photo/Video
-        </a>
-        <a href="" >
-          <img src="images/tag.svg" style="width: 26px;">
-          Tag Friend
-        </a>
-        <a href="">
-          <img src="images/feeling.svg" style="width: 18px">
-          Feeling/Activity
-        </a>
+      <div class="post-new-content">
+        <input type="text" class="form-control form-control post-new-input" placeholder="Whats on your mind?" open-modal>
       </div>
     </div>
-  </div>
-  <upload-progress-directive percentage="{{ nf.percentage }}" fileuploaded="nf.uploadedfile" ng-if="nf.uploading"></upload-progress-directive>
-  <div class="posts-body" style="margin-top: .7em;box-shadow: 0px 0.0625pc 0.5625pc -0.125pc #d2d2d2;" ng-repeat="post in nf.post">
-    <posted-feed-directive userpost="post" style="width: 100%;"></posted-feed-directive>
-  </div>
-<!-- </div> -->
-
-
-
-
-
-
-
-
-
-<!--     <div class="posts-header" style="display: flex; background-color: #fff;width: 100%;padding: 15pt .15625in 0px .15625in;border-top-left-radius: 7px;border-top-right-radius: 7px;">
-      <div class="post-image" style="width: 11%;">
-        <img ng-src="{{ post.photo }}" style="width: 50px;border-radius: 100%;border:3px solid whitesmoke;">
-      </div>
-      <div class="post-title" style="width: 89%;display: block;margin-left: .4375pc;">
-        <i class="fa fa-ellipsis-h" style="float: right;color:#757a95;padding-top: 5px;"></i>
-        <p style="margin-bottom: 0px;color: #545454;">{{ post.name }}</p>
-        <p style="margin-bottom: 0px;color: #6d6d6d;font-size: 13px;">5hrs</p>
-      </div>
-    </div>
-    <div class="posts-description" style="background-color: #fff;width: 100%;padding: 0px .15625in 0px .15625in;">
-      <hr style="margin-top: .7pc; margin-bottom: .5pc;">
-      <p style="padding-top: 5px;color: #6d6d6d;font-size: 14.5px;">{{ post.description }}</p>
-    </div>
-    <div class="post-grid">
-      
-  <video
-    id="my-video"
-    class="video-js vjs-fluid"
-    controls
-    preload="auto"
-    data-setup="{}"
-  >
-    <source src="images/zoevid.mp4" type="video/mp4" />
-    <source src="images/zoevid.mp4" type="video/webm" />
-    <p class="vjs-no-js">
-      To view this video please enable JavaScript, and consider upgrading to a
-      web browser that
-      <a href="images/zoevid.mp4" target="_blank"
-        >supports HTML5 video</a
-      >
-    </p>
-
-    </div>
-    <div class="react-section" style="">
-      <a href="" style="">
-        <i class="far fa-thumbs-up"></i>
-        Like
+    <hr style="margin-top: .7pc; margin-bottom: .5pc;">
+    <div class="button-type">
+      <a href="">
+        <img src="images/image.svg" style="width: 28px;">
+        Photo/Video
+      </a>
+      <a href="" >
+        <img src="images/tag.svg" style="width: 26px;">
+        Tag Connections
       </a>
       <a href="">
-        <i class="far fa-comment-alt"></i>
-        Comment
+        <img src="images/feeling.svg" style="width: 18px">
+        Feeling/Activity
       </a>
-      <a href="">
-        <i class="far fa-bookmark"></i>
-        save
-      </a>
-    </div> -->
+    </div>
+  </div>
+</div>
+<upload-progress-directive percentage="{{ nf.percentage }}" fileuploaded="nf.uploadedfile" ng-if="nf.uploading"></upload-progress-directive>
+<div class="posts-body" style="margin-top: .7em;box-shadow: 0px 0.0625pc 0.5625pc -0.125pc #d2d2d2;" ng-repeat="post in nf.post">
+  <posted-feed-directive userpost="post" style="width: 100%;"></posted-feed-directive>
+</div>
