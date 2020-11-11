@@ -1,10 +1,10 @@
-angular.module('pnhsApp').directive('tagConnectionsSuggestions', ['$timeout', function($timeout){
+angular.module('pnhsApp').directive('tagConnectionsSuggestionsDirective', ['$timeout', function($timeout){
   return{
     restrict: 'E',
     scope:{
       status: '='
     },
-    templateUrl: 'src/views/tag_friends_suggesstions.html',
+    templateUrl: 'src/views/tag_connections_suggesstions.html',
     controller: 'taggedUserListCtrl',
     controllerAs: 'tc',
     link: function(scope, elem, attrs){

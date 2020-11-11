@@ -1,5 +1,5 @@
 var EmojiConvertor = require('emoji-js');
-angular.module('pnhsApp').directive('feelingActivity', ['$sce', '$timeout', function($sce, $timeout){
+angular.module('pnhsApp').directive('feelingActivityDirective', ['$sce', '$timeout', function($sce, $timeout){
 
   function link(scope, elem, attrs){
 

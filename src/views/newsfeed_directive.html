@@ -26,6 +26,6 @@
   </div>
 </div>
 <upload-progress-directive percentage="{{ nf.percentage }}" fileuploaded="nf.uploadedfile" ng-if="nf.uploading"></upload-progress-directive>
-<div class="posts-body" style="margin-top: .7em;box-shadow: 0px 0.0625pc 0.5625pc -0.125pc #d2d2d2;" ng-repeat="post in nf.post">
+<div class="posts-body" style="margin-top: .7em;box-shadow: 0 3px 1px -2px rgba(0,0,0,.02), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);" ng-repeat="post in nf.post">
   <posted-feed-directive userpost="post" style="width: 100%;"></posted-feed-directive>
 </div>

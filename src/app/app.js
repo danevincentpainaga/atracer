@@ -46,6 +46,39 @@ angular
         },
       }
     })
+    .state('pnhs_admin', {
+      url: '/pnhs_admin',
+      views:{
+        '':{
+          templateUrl: 'src/views/administrator.html',
+        },
+        'admin-view@pnhs_admin':{
+          templateUrl: 'src/views/dashboard.html',
+        }
+      }
+    })
+    .state('pnhs_admin.user_accounts', {
+      url: '/user_accounts',
+      views:{
+        '':{
+          templateUrl: 'src/views/administrator.html',
+        },
+        'admin-view@pnhs_admin':{
+          templateUrl: 'src/views/user_accounts.html',
+        }
+      }
+    })
+    .state('pnhs_admin.alumni_accounts', {
+      url: '/alumni_accounts',
+      views:{
+        '':{
+          templateUrl: 'src/views/administrator.html',
+        },
+        'admin-view@pnhs_admin':{
+          templateUrl: 'src/views/alumni_accounts.html',
+        }
+      }
+    })
     .state('/404-page-not-found', {
       url: '/404-page-not-found',
       templateUrl: 'src/views/404.html',
@@ -66,6 +99,7 @@ angular
     else{
       $rootScope.loggedIn = true;
       $rootScope.token = auth.success.token;
+      $rootScope.administrator = false;
       console.log(auth);
     }
   
@@ -83,6 +117,10 @@ angular
 
   $transitions.onSuccess({ entering: 'timeline.**'}, function(transition) {
 
+  });
+
+  $transitions.onSuccess({ entering: 'pnhs_admin.**'}, function(transition) {
+    $rootScope.administrator = true;
   });
 
   $transitions.onSuccess({ to: '/404-page-not-found' }, function(transition) {
